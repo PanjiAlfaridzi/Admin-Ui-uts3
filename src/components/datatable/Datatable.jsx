@@ -2,7 +2,7 @@ import "./datatable.scss";
 import { DataGrid } from "@mui/x-data-grid";
 import { Link,useLocation } from "react-router-dom";
 
-const Datatable = () => {
+const Datatable = (columns) => {
   const location = useLocation();
   const type = location.pathname.split('/')[1];
 
