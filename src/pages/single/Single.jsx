@@ -3,8 +3,12 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import Chart from "../../components/chart/Chart";
 import Datatable from "../../components/datatable/Datatable";
+import { useLocation } from "react-router-dom"
 
 const Single = (columns) => {
+  const location = useLocation();
+  const id = location.pathname.split('/')[2];
+
   return (
     <div className="single">
       <Sidebar />
@@ -22,6 +26,10 @@ const Single = (columns) => {
               />
               <div className="details">
                 <h1 className="itemTitle">Jane Doe</h1>
+                <div className="detailItem">
+                  <span className="itemKey">ID:</span>
+                  <span className="itemValue">{id}</span>
+                </div>
                 <div className="detailItem">
                   <span className="itemKey">Email:</span>
                   <span className="itemValue">janedoe@gmail.com</span>
